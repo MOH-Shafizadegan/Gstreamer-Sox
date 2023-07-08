@@ -1,0 +1,3 @@
+/media/mohsh/EDU/SUT/Semester6/Embedded Systems/Project/main/Section2/Flask_App/stream/build/CMakeFiles/main.dir
+/media/mohsh/EDU/SUT/Semester6/Embedded Systems/Project/main/Section2/Flask_App/stream/build/CMakeFiles/edit_cache.dir
+/media/mohsh/EDU/SUT/Semester6/Embedded Systems/Project/main/Section2/Flask_App/stream/build/CMakeFiles/rebuild_cache.dir

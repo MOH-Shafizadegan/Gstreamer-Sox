@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/main.dir/src/gst_video.c.o -o bin/main  -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0 
