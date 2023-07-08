@@ -1,0 +1,72 @@
+/* Use a custom font for the whole page */
+	@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+	/* Set the font family, size and color for the whole page */
+	body {
+	    font-family: 'Roboto', sans-serif;
+	    font-size: 18px;
+	    color: #333;
+	}
+
+	/* Center the title and make it bigger and bolder */
+	h1 {
+	    text-align: center;
+	    font-size: 36px;
+	    font-weight: bold;
+	}
+	
+	h2{
+	    text-align: center;
+	}
+
+	/* Center the paragraph and make it italic */
+	p {
+	    text-align: center;
+	    font-style: italic;
+	}
+
+	/* Style the form with a margin and a border */
+	form {
+	    margin: 20px auto;
+	    width: 300px;
+	    padding: 10px;
+	}
+
+	/* Style the labels with a margin and a display */
+	label {
+	    margin: 10px;
+	    display: inline-block;
+	}
+
+	/* Style the button with a blue background, white text, rounded corners and a shadow */
+	button {
+	    background-color: #2196f3;
+	    color: white;
+	    border: none;
+	    border-radius: 8px;
+	    padding: 10px 20px;
+	    margin-left: 100px;
+	    box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+	}
+
+	/* Change the button color on hover */
+	button:hover {
+	    background-color: #1e88e5;
+	}
+
+	/* Center the buttons in the parent element */
+	.buttons {
+	    text-align: center;
+	}
+
+	/* Make the buttons inline-block elements */
+	.buttons button {
+	    display: inline-block;
+	}
+	
+	img{
+		border: 5px solid #2196f3;
+		border-radius: 10px; 
+		box-shadow: 10px 10px 4px rgba(0,0,0,0.1);
+		margin-left: 700px;
+	}
