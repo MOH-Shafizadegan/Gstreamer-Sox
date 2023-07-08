@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video and Audio App</title>
+    <!-- Include Bootstrap CSS from CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="{{ url_for('static', filename='video-js.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- Wrap your content inside a container -->
+    <div class="container">
+        <!-- Use a display-4 heading for your main title -->
+        <h1 class="display-4">Video and Audio App</h1>
+        <!-- Use a lead paragraph for your introduction -->
+        <p class="lead">This is a simple app that streams video using GStreamer and records and processes audio using SOX.</p>
+        <!-- Use a row to create two equal columns -->
+        <div class="row">
+            <!-- Use a col-md-6 column for your video section -->
+            <div class="col-md-6 p-3">
+                <!-- Use an h2 heading for your video title -->
+                <h2>Video Streaming</h2>
+                <video-js id="video_id" class="vjs-default-skin w-100 h-100" controls preload="auto">
+                  <source src="{{ url_for('static', filename='playlist.m3u8') }}" type="application/x-mpegURL">
+                </video-js>
+                <script src="{{ url_for('static', filename='video.js') }}"></script>
+                <script src="{{ url_for('static', filename='videojs-http-streaming.js') }}"></script>
+                <script>
+                  var player = videojs('video_id');
+                </script>
+            </div>
+            <!-- Use a col-md-6 column for your audio section -->
+            <div class="col-md-6 p-3">
+                <!-- Use an h2 heading for your audio title -->
+                <h2>Audio Recording</h2>
+                <!-- Use a text-muted paragraph for your audio description -->
+                <p class="text-muted">This is a simple page that records and processes audio from the microphone using SOX.</p>
+                <!-- Use a form-inline class to make your form horizontal -->
+                <form action="/audio_record" method="POST" class="form-inline">
+                    <!-- Use form-group classes to group your labels and inputs -->
+                    <div class="form-group mr-3">
+                        <!-- Use text-muted labels for your inputs -->
+                        <label for="treshold" class="text-muted mr-1">Treshold:</label>
+                        <!-- Use form-control classes to style your inputs -->
+                        <input type="number" id="treshold" name="treshold" value="-5" min="-10" max="1" step="0.5" class="form-control">
+                    </div>
+                    <div class="form-group mr-3">
+                        <label for="duration" class="text-muted mr-1">Duration:</label>
+                        <input type="number" id="duration" name="duration" value="10" min="1" max="60" step="1" class="form-control">
+                    </div>
+                    <!-- Use btn classes to style your button -->
+                    <button type="submit" class="btn btn-lg btn-outline-primary">Record Sound</button>
+                </form>
+                <p>{{record_state}}</p>
+                {% if recording_done %} 
+                <audio src="{{ url_for('static', filename=audio_file) }}" controls autoplay></audio>
+                <!-- Use an h4 heading for your comparison result -->
+                <h4>Result of comparison of the RMS amplitude of the recorded voice and the given treshold :</h4>
+                <p>{{output}}</p>
+                {% endif %} 
+            </div>
+        </div>
+    </div>
+    <!-- Include Bootstrap JS and jQuery from CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
