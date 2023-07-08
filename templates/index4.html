@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Streamer</title>
+    <!-- Include Bootstrap CSS from CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Wrap your content inside a container -->
+    <div class="container">
+        <!-- Use a display-4 heading for your main title -->
+        <h1 class="display-4 text-center text-primary mt-5">Video Streamer</h1>
+        <!-- Use a lead paragraph for your introduction -->
+        <p class="lead text-center mb-5">This is a simple app that streams video using GStreamer </p>
+        <!-- Use a row to create a single column -->
+        <div class="row">
+            <!-- Use a col-md-12 column for your video streaming section -->
+            <div class="col-md-12">
+                <!-- Use an h2 heading for your video title -->
+                <h2 class="text-center mb-5">Video Streaming</h2>
+                {% if start_recording %}
+                    <!-- Use an img-fluid class to make your image responsive -->
+                    <img src="https://allvideoshare.mrvinoth.com/images/2019/01/24/youtube-live-down-1534503881.gif" class="img-fluid rounded mx-auto d-block mb-5">
+                    <!-- Use a text-muted paragraph for your video status -->
+                    <p class="text-muted text-center"> Video is now streaming</p>
+                {% else%}
+                    <!-- Use a form-inline class to make your form horizontal -->
+                    <form action="{{ url_for('stream') }}" method="post" class="form-inline justify-content-center mb-5">
+                        <!-- Use btn classes to style your button -->
+                        <button type="submit" class="btn btn-lg btn-outline-primary">Click to Stream</button>
+                    </form>
+                    <img src="https://allvideoshare.mrvinoth.com/images/2019/01/24/youtube-live-down-1534503881.gif" class="img-fluid rounded mx-auto d-block mb-5">
+                    <p class="text-muted text-center"> Video is now streaming</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
