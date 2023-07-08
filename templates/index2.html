@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video and Audio App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    <h1>Video Streamer</h1>
+    <p>This is a simple app that streams video using GStreamer </p>
+    
+    <dev>
+	    <h2>Video Streaming</h2>
+	    {% if start_recording %}
+	    	<img src="https://allvideoshare.mrvinoth.com/images/2019/01/24/youtube-live-down-1534503881.gif">
+	    	<p> Video is now streaming</p>
+	    {% else%}
+	    	<form action="{{ url_for('stream') }}" method="post">
+	    		<button>Click to Stream</button>
+		</form>
+		<img src="https://allvideoshare.mrvinoth.com/images/2019/01/24/youtube-live-down-1534503881.gif">
+	    	<p> Video is now streaming</p>
+	    {% endif %}
+    </dev>
+</body>
+</html>
+
